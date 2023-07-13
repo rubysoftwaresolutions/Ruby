@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby Software Solutions - Singup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header style="padding-top: 0px; padding-bottom: 0px;">
+    <nav>
+      <a href="index.html" style="color: white;text-decoration: blink;">
+      <h1 class="logo" style=" margin-top: 0px; margin-bottom: 5px;">
+      <img src="software-solutions-logo.png" alt="Software Solutions Logo" class="logo-icon">
+      <span class="logo-ruby">Ruby</span><br>
+      <span class="logo-software">software solutions</span>
+    </h1>
+    </a>
+    <ul class="navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="documentation.html">Documentation</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="singup.html">Sing up</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="signup">
+    <h2>Sing up</h2>
+    <div class="signup-form" onsubmit="return validateForm()">
+    <div class="input-field-wrapper">
+  <label for="name" class="input-label">Name</label>
+  <input type="text" id="name" class="input-field" placeholder="Enter your name" onfocus="showLabel(this)" onblur="hideLabel(this)">
+</div>
+<div class="input-field-wrapper">
+  <label for="username" class="input-label">Username</label>
+  <input type="text" id="username" class="input-field" placeholder="Enter your username" onfocus="showLabel(this)" onblur="hideLabel(this)">
+</div>
+<div class="input-field-wrapper">
+  <label for="email" class="input-label">Email</label>
+  <input type="email" id="email" class="input-field" placeholder="Enter your email" onfocus="showLabel(this)" onblur="hideLabel(this)">
+</div>
+<div class="input-field-wrapper">
+  <label for="password" class="input-label">Password</label>
+  <input type="password" id="password" class="input-field" placeholder="Enter your password" onfocus="showLabel(this)" onblur="hideLabel(this)">
+</div>
+<div class="input-field-wrapper">
+  <label for="confirm-password" class="input-label">Confirm Password</label>
+  <input type="password" id="confirm-password" class="input-field" placeholder="Confirm your password" onfocus="showLabel(this)" onblur="hideLabel(this)">
+</div>
+
+      <button type="button" class="signup-button" onclick="validateForm()">Sing up</button>
+    </div>
+    <p>Sing up for our newsletter to stay updated with the latest news, product updates, and special offers from Ruby Software Solutions.</p>
+    <p>Don't miss out on important announcements and industry insights.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2023 Ruby Software Solutions. All rights reserved.
+</footer>
+
+<script>
+function showLabel(input) {
+  input.previousElementSibling.style.display = "inline-block";
+}
+
+function hideLabel(input) {
+  if (input.value === "") {
+    input.previousElementSibling.style.display = "none";
+  }
+}
+
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirm-password").value;
+
+  if (name === "") {
+    alert("Please enter your name");
+    return false;
+  }
+
+  if (username === "") {
+    alert("Please enter a username");
+    return false;
+  }
+
+  if (email === "") {
+    alert("Please enter your email");
+    return false;
+  }
+
+  if (password === "") {
+    alert("Please enter a password");
+    return false;
+  }
+
+  if (confirmPassword === "") {
+    alert("Please confirm your password");
+    return false;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match");
+    return false;
+  }
+
+  // Additional validation checks can be added here
+
+  return true;
+}
+
+</script>
+</body>
+</html>
