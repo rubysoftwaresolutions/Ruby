@@ -124,3 +124,102 @@ footer {
 .signup-button:hover {
   background-color: #555;
 }
+
+
+
+#plans {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.plans-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  flex-wrap: wrap;
+}
+
+.plan {
+  flex-basis: calc(33.33% - 40px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan img {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.plan h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.tick,
+.cross {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.tick {
+  color: green;
+}
+
+.cross {
+  color: red;
+}
+
+/* Media queries to adjust padding and number of rows */
+@media only screen and (max-width: 850px) {
+  .plans-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .plans-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .plan {
+    flex-basis: calc(50% - 40px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .plans-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .plan {
+    flex-basis: calc(100% - 40px);
+  }
+}
+
+@media only screen and (min-width: 1165px) {
+  .plans-container {
+    padding-left: calc(-50px + (100vw - 850px) / 2);
+    padding-right: calc(-50px + (100vw - 850px) / 2);
+  }
+}
