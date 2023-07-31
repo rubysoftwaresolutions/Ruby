@@ -223,3 +223,33 @@ footer {
     padding-right: calc(-50px + (100vw - 850px) / 2);
   }
 }
+
+#video {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.video-container {
+  max-width: 560px; /* Set the maximum width for the video */
+  margin: 0 auto; /* Center the video horizontally */
+  position: relative;
+}
+
+.video-container iframe {
+  width: 100%; /* Make the video fill the container width */
+  height: 315px; /* Set the default height */
+  max-height: 100%; /* Prevent stretching beyond 315px height */
+}
+
+/* Media queries to adjust video size for low screen sizes */
+@media only screen and (max-width: 640px) {
+  .video-container iframe {
+    height: 280px; /* 4:3 aspect ratio */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .video-container iframe {
+    height: 320px; /* 1:1 aspect ratio */
+  }
+}
